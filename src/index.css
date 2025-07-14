@@ -97,5 +97,39 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .chat-bubble {
+    @apply relative rounded-2xl px-4 py-3 max-w-xs lg:max-w-md shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .chat-bubble::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .chat-bubble.own::before {
+    bottom: 10px;
+    right: -6px;
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent black;
+  }
+
+  .chat-bubble.other::before {
+    bottom: 10px;
+    left: -6px;
+    border-width: 6px 8px 6px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .mobile-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
