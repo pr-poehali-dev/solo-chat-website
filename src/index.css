@@ -132,4 +132,28 @@
   .mobile-safe-area {
     padding-bottom: env(safe-area-inset-bottom);
   }
+
+  /* Responsive improvements */
+  @media (min-width: 768px) {
+    .desktop-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .mobile-optimized {
+      touch-action: manipulation;
+    }
+
+    .mobile-tap-highlight {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  /* Smooth scrolling for all devices */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 }
